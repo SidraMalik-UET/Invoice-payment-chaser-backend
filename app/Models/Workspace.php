@@ -35,4 +35,9 @@ class Workspace extends Model
     {
         return $this->belongsTo(User::class, 'owner_id');
     }
+
+    public function invitations()
+    {
+    return $this->hasMany(Invitation::class);
+    }
 }

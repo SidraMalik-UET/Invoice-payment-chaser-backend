@@ -59,4 +59,9 @@ class User extends Authenticatable
         )->withPivot('role')
          ->withTimestamps();
     }
+
+    public function sentInvitations()
+    {
+    return $this->hasMany(Invitation::class, 'invited_by');
+    }
 }
